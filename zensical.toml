@@ -1,0 +1,42 @@
+[project]
+site_name = "ZenMoney Telegram Bot"
+site_description = "Импорт PDF-выписок Forte, Kaspi и Halyk в ZenMoney через Telegram-бота"
+site_url = "https://rusnino.github.io/zenmoney-telegram-bot-docs/"
+docs_dir = "docs"
+site_dir = "site"
+nav = [
+  { "Обзор" = "index.md" },
+  { "Как устроен бот" = "architecture.md" },
+  { "Установка и первый запуск" = "install.md" },
+  { "Конфигурация" = [
+    { "Переменные окружения" = "configuration/env.md" },
+    { "Конфиг счетов (TOML)" = "configuration/accounts.md" },
+  ] },
+  { "Работа с ботом" = [
+    { "Импорт выписки" = "usage/import.md" },
+    { "Команды" = "usage/commands.md" },
+    { "Переводы между своими счетами" = "usage/transfers.md" },
+    { "Аудит-лог и ручной откат" = "usage/rollback.md" },
+  ] },
+  { "Банки и выписки" = "banks.md" },
+  { "CLI" = "cli.md" },
+  { "FAQ" = [
+    { "Блокировки" = "faq/blocks.md" },
+    { "Ошибки разбора PDF" = "faq/pdf-errors.md" },
+    { "Ошибки ZenMoney API" = "faq/api-errors.md" },
+    { "Известные ограничения" = "faq/limitations.md" },
+  ] },
+]
+
+[project.theme]
+language = "ru"
+
+[project.markdown_extensions]
+admonition = {}
+attr_list = {}
+pymdownx.details = {}
+pymdownx.superfences = { custom_fences = [
+  { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" },
+] }
+tables = {}
+toc = { permalink = true }
